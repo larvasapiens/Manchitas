@@ -3,23 +3,31 @@
 
 One-dimensional Cellular Automata visualizer made in pure Java (JDK v1.7).
 
+![Rule 14](Screenshots/Manchitas_14.png)
+
+![Rule 30](Screenshots/Manchitas_30.png)
+
+![Rule 110](Screenshots/Manchitas_110.png)
+
 ## Requisites
-* Java JDK v1.7 (Other versions will probably work, but it hasn't been tested).
+* Java JDK v1.7 or higher (Tested on 1.7 and 1.8).
 
 ## Usage
 
 ### Compile it:
-  ```
-    cd src #Locate at the src folder.
-    mkdir clases # Create a folder called `classes` so the compilation files
-      don't get mixed with the source code.
-    javac -d clases/ CA/*.java # Compile the source code and send the output
-      files to the classes folder.
-  ```
+```
+>> mkdir classes # Create a folder called `classes` so the compilation
+	# files don't get mixed with the source code.
+
+>> cd src # Locate at the src folder.
+
+>> javac -d ../classes/ CA/*.java # Compile the source code and send the
+	# output files to the classes folder.
+```
         
 ### Run it:
   ```
-    cd classes
+    cd ../classes
     java CA/FramePrincipal
   ```
 ### Use it:
