@@ -1,35 +1,53 @@
-Proyecto Practico Vida Artificial, presentado por Sebastian Narvaez R. (1035605).
-Automata Celular de 1 Dimension, con Celulas de 2 Estados.
+# Manchitas
+[Main Repository](https://gitlab.com/larvasapiens/Manchitas)
 
-- Propiedades de la Implementacion:
+One-dimensional Cellular Automata visualizer made in pure Java (JDK v1.7).
 
-	* Lenguaje de Programacion: Java
-	* Version del JDK: 1.7
-	* Librerias externas utilizadas: Ninguna
-	
-- Instrucciones para Compilar y Ejecutar:
-	* Compilacion: Ubiquese en la carpeta src, y ejecute los siguientes comandos:
-		mkdir clases #Si ya existe un directorio clases en src, omita este comando
-		javac -d clases/ CA/*.java
-		
-	* Ejecucion: Ubiquese en la carpeta clases creada en el paso anterior, y ejecute el siguiente comando:
-		java CA/FramePrincipal
-	
-	ATENCION: Intentar compilar o ejecutar desde otro directorio del indicado puede producir errores, ya que los archivos
-	pertenecen al paquete CA, y java asocia los paquetes con las carpetas.
-	
-- Instrucciones de Uso:
+![Rule 14](Screenshots/Manchitas_14.png)
 
-	* Configure la poblacion inicial de Celulas (El tamano de esta es fijo: 100 Celulas) haciendo click en cada una de las
-	  Celulas de la primera fila.
-		- Oprima Reset para volver a la configuracion inicial (Todas las Celulas Muertas).
-		- Oprima Poblacion Aleatoria para generar pseudoaleatoriamente una poblacion inicial.
-		
-	* Digite la regla bajo la cual se rige el Automata Celular, introduciendo el numero decimal que representa dicha regla en
-	  el campo "Regla" (Los valores validos son aquellos entre 0 y 2^(2^(Cant. de vecinos))).
-		- Puede cambiar el numero de vecinos que se tendran en cuenta para aplicar la regla, introduciendolo en el campo "Cant.
-		  Vecinos" (3 por defecto).
-		  
-	* Oprima Procesar Automata para aplicar las reglas, teniendo en cuenta la cant. de vecinos definida, a partir de la pobla-
-	  ción inicial hasta un tiempo fijo = 100 (Cada fila representa la población inicial en determinado tiempo). Este software
-	  construye un Automata Celular de Frontera Fría.
+![Rule 30](Screenshots/Manchitas_30.png)
+
+![Rule 110](Screenshots/Manchitas_110.png)
+
+## Requisites
+* Java JDK v1.7 or higher (Tested on 1.7 and 1.8).
+
+## Usage
+
+### Compile it:
+```
+>> mkdir classes # Create a folder called `classes` so the compilation
+	# files don't get mixed with the source code.
+
+>> cd src # Locate at the src folder.
+
+>> javac -d ../classes/ CA/*.java # Compile the source code and send the
+	# output files to the classes folder.
+```
+        
+### Run it:
+  ```
+    cd ../classes
+    java CA/FramePrincipal
+  ```
+### Use it:
+* Configure the initial population by clicking the cells of the first row. The
+  coloured cells are `alive`, while the blank cells are `dead`.
+  
+    * You can also get a random initialization by clicking the `Poblacion Aleatoria` button.
+    * Push the `Reset` button to return all the cells from the first row to a `dead` state 
+
+* Write the rule that you want to visualize in the `Regla` field. Be sure to write
+  a valid rule (ranging from 0 to 2^(2^(<number of neighbors>))).
+    * You can change the number of neighbors that each cell will have into account
+    when deciding its next state by writing it in the `Num. de Vecinos` field.
+    (3 by default).
+          
+* Push the `Procesar Automata` button to visualize the Automata. Each column represents
+  a cell, changing over time. Each row is a specific time steps. Manchitas supports
+  100 cells and 100 time steps. A `Cold Frointer` is assumed.
+
+## Troubleshooting
+* Be sure that you are running the commands from the folders shown at the Usage
+  section. Java uses the folder structure to determine the packages.
+
